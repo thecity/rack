@@ -248,7 +248,7 @@ TEMPLATE = <<'HTML'
   <h2>Request information</h2>
 
   <h3 id="get-info">GET</h3>
-  <% unless req.GET.empty? %>
+  <% if req.GET and not req.GET.empty? %>
     <table class="req">
       <thead>
         <tr>
@@ -270,7 +270,7 @@ TEMPLATE = <<'HTML'
   <% end %>
 
   <h3 id="post-info">POST</h3>
-  <% unless req.POST.empty? %>
+  <% if req.POST and not req.POST.empty? %>
     <table class="req">
       <thead>
         <tr>
@@ -293,7 +293,7 @@ TEMPLATE = <<'HTML'
 
 
   <h3 id="cookie-info">COOKIES</h3>
-  <% unless req.cookies.empty? %>
+  <%   unless req.cookies.empty? %>
     <table class="req">
       <thead>
         <tr>
